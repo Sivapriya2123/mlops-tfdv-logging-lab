@@ -1,0 +1,7 @@
+.git
+data
+logs
+reports
+schema
+alerts
+__pycache__
