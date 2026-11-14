@@ -68,3 +68,21 @@ src/
   alert.py         threshold alerts + Slack
   run_pipeline.py  runs everything
 ```
+
+## Results
+| Batch | Env | Rows | Anomalies | Status |
+|---|---|---|---|---|
+| eval | TRAINING | 3000 | 0 | OK |
+| serving | SERVING | 3000 | 0 | OK |
+| batch_corrupt | TRAINING | 1500 | 6 | ALERT |
+| batch_drift | TRAINING | 2019 | 2 | ALERT |
+
+**Findings**
+- All 6 injected issues caught: invalid SEX, EDUCATION and PAY_0 codes, out of range AGE, missing BILL_AMT1 values, dropped PAY_AMT6
+- Drift detected on LIMIT_BAL (Jensen-Shannon) and EDUCATION (L-infinity)
+- Slicing shows a higher default rate for men (24.0%) than women (20.5%)
+
+![Summary](screenshots/summary.png)
+![Drift report](screenshots/drift_report.png)
+![Slice report](screenshots/slice_report.png)
+![Structured logs and alerts](screenshots/logs.png)
