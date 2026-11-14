@@ -27,6 +27,18 @@ MLOps Lab (IE7374). Based on the course **TFDV_Labs** (Lab1, Lab2, Lab3) and **L
 | Data slicing by SEX and EDUCATION | `slicing.py` |
 | Frozen schema | `schema/schema.pbtxt` |
 
+## Logging concepts covered (from Logging_Labs)
+| Concept | Where |
+|---|---|
+| Named loggers per module | `logger.py` (`get_logger`) |
+| Log levels (INFO, WARNING, ERROR) | `validate.py`, `alert.py` |
+| Multiple handlers (console + file) | `logger.py` |
+| Custom formatter (JSON lines) | `logger.py` (`JsonFormatter`) |
+| Log rotation (1 MB, 3 backups) | `logger.py` (`RotatingFileHandler`) |
+| Contextual fields via `extra` | all modules |
+| Exception logging with traceback | `logger.py` (`log_step`) |
+| Step timing | `logger.py` (`log_step`) |
+
 ## Pipeline
 ```
 prepare_data -> baseline (stats + curated schema) -> slicing -> validate batches -> log -> alert
@@ -39,13 +51,6 @@ docker run --rm --platform linux/amd64 -v "$(pwd)":/app tfdv-logging-lab
 ```
 Optional: `-e ALERT_THRESHOLD=3 -e DRIFT_THRESHOLD=0.15 -e SLACK_WEBHOOK_URL=<url>`
 
-## Expected results
-| Batch | Environment | Result |
-|---|---|---|
-| eval | TRAINING | OK (random sample of the same data) |
-| serving | SERVING | OK, label missing is not flagged thanks to environments |
-| batch_corrupt | TRAINING | Missing values, out of range AGE, invalid SEX / EDUCATION / PAY_0, dropped column, ALERT |
-| batch_drift | TRAINING | Drift on EDUCATION and LIMIT_BAL, ALERT |
 
 ## Outputs
 | Folder | Contents |
@@ -79,7 +84,7 @@ src/
 
 **Findings**
 - All 6 injected issues caught: invalid SEX, EDUCATION and PAY_0 codes, out of range AGE, missing BILL_AMT1 values, dropped PAY_AMT6
-- Drift detected on LIMIT_BAL (Jensen-Shannon) and EDUCATION (L-infinity)
+- Drift detected on EDUCATION (L-infinity 0.34, well above 0.1) and LIMIT_BAL (Jensen-Shannon 0.1006, just above 0.1). The LIMIT_BAL result is borderline, so the threshold would need tuning with domain knowledge in production
 - Slicing shows a higher default rate for men (24.0%) than women (20.5%)
 
 ![Summary](screenshots/summary.png)
