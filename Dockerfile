@@ -13,6 +13,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-COPY . .
+# Run as a non-root user
+RUN useradd --create-home --uid 1000 appuser
+COPY --chown=appuser:appuser . .
+USER appuser
 
 CMD ["python", "-m", "src.run_pipeline"]

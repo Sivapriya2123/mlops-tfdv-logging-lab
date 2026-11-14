@@ -45,3 +45,12 @@
 {"ts": "2026-11-14T21:53:32.684503+00:00", "level": "INFO", "logger": "pipeline", "msg": "serving        env=SERVING  rows=3000   anomalies=0   status=OK", "batch": "serving", "env": "SERVING", "rows": 3000, "anomalies": 0, "alerted": false}
 {"ts": "2026-11-14T21:53:32.684798+00:00", "level": "INFO", "logger": "pipeline", "msg": "batch_corrupt  env=TRAINING rows=1500   anomalies=6   status=ALERT", "batch": "batch_corrupt", "env": "TRAINING", "rows": 1500, "anomalies": 6, "alerted": true}
 {"ts": "2026-11-14T21:53:32.685117+00:00", "level": "INFO", "logger": "pipeline", "msg": "batch_drift    env=TRAINING rows=2019   anomalies=2   status=ALERT", "batch": "batch_drift", "env": "TRAINING", "rows": 2019, "anomalies": 2, "alerted": true}
+{"ts": "2026-11-14T23:31:36.710321+00:00", "level": "ERROR", "logger": "alert", "msg": "ALERT b: 2 anomalies", "batch": "b", "anomaly_count": 2, "threshold": 2, "features": ["F0", "F1"]}
+{"ts": "2026-11-14T23:31:36.714600+00:00", "level": "ERROR", "logger": "alert", "msg": "ALERT b: 5 anomalies", "batch": "b", "anomaly_count": 5, "threshold": 2, "features": ["F0", "F1", "F2", "F3", "F4"]}
+{"ts": "2026-11-14T23:31:36.716820+00:00", "level": "ERROR", "logger": "alert", "msg": "ALERT b1: 3 anomalies", "batch": "b1", "anomaly_count": 3, "threshold": 2, "features": ["F0", "F1", "F2"]}
+{"ts": "2026-11-14T23:31:36.717196+00:00", "level": "ERROR", "logger": "alert", "msg": "ALERT b2: 3 anomalies", "batch": "b2", "anomaly_count": 3, "threshold": 2, "features": ["F0", "F1", "F2"]}
+{"ts": "2026-11-14T23:31:36.719674+00:00", "level": "ERROR", "logger": "alert", "msg": "ALERT b: 3 anomalies", "batch": "b", "anomaly_count": 3, "threshold": 2, "features": ["F0", "F1", "F2"]}
+{"ts": "2026-11-14T23:31:36.722085+00:00", "level": "ERROR", "logger": "alert", "msg": "ALERT b: 3 anomalies", "batch": "b", "anomaly_count": 3, "threshold": 2, "features": ["F0", "F1", "F2"]}
+{"ts": "2026-11-14T23:31:36.722935+00:00", "level": "INFO", "logger": "alert", "msg": "Slack alert sent"}
+{"ts": "2026-11-14T23:31:36.725002+00:00", "level": "ERROR", "logger": "alert", "msg": "ALERT b: 3 anomalies", "batch": "b", "anomaly_count": 3, "threshold": 2, "features": ["F0", "F1", "F2"]}
+{"ts": "2026-11-14T23:31:36.725499+00:00", "level": "WARNING", "logger": "alert", "msg": "Slack alert failed: network down"}

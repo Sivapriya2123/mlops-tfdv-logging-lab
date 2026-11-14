@@ -7,3 +7,4 @@ numpy==1.24.3
 pandas==1.5.3
 protobuf==3.20.3
 ucimlrepo==0.0.7
+pytest==7.4.4

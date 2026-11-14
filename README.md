@@ -91,3 +91,18 @@ src/
 ![Drift report](screenshots/drift_report.png)
 ![Slice report](screenshots/slice_report.png)
 ![Structured logs and alerts](screenshots/logs.png)
+
+## Testing
+36 pytest tests run inside the Docker image:
+- `test_corrupt.py`: corrupt and drift simulators (exact counts, input not modified, reproducibility, edge case with no defaulters)
+- `test_alert.py`: alert threshold, appending, Slack success and failure
+- `test_logger.py`: JSON formatting, context fields, exception logging, failed steps re-raised
+- `test_schema.py`: curated schema accepts valid data and flags invalid codes, out of range values and missing columns, with SERVING vs TRAINING environments
+
+```bash
+docker run --rm --platform linux/amd64 -v "$(pwd)":/app tfdv-logging-lab python -m pytest -v -p no:cacheprovider
+```
+
+The container runs as a non-root user (`appuser`).
+
+![Tests](screenshots/tests.png)
