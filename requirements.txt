@@ -1,2 +1,9 @@
 tensorflow-data-validation==1.14.0
+tensorflow==2.13.1
+tfx-bsl==1.14.0
+apache-beam[gcp]==2.48.0
+pyarrow==10.0.1
+numpy==1.24.3
+pandas==1.5.3
+protobuf==3.20.3
 ucimlrepo==0.0.7
