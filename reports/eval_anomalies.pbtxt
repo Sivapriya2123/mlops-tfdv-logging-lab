@@ -1,0 +1,483 @@
+baseline {
+  feature {
+    name: "LIMIT_BAL"
+    type: INT
+    int_domain {
+      name: "LIMIT_BAL"
+      min: 0
+    }
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    drift_comparator {
+      jensen_shannon_divergence {
+        threshold: 0.1
+      }
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "SEX"
+    type: BYTES
+    string_domain {
+      name: "SEX"
+      value: "1"
+      value: "2"
+    }
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    skew_comparator {
+      infinity_norm {
+        threshold: 0.03
+      }
+    }
+    drift_comparator {
+      infinity_norm {
+        threshold: 0.1
+      }
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "EDUCATION"
+    type: BYTES
+    string_domain {
+      name: "EDUCATION"
+      value: "1"
+      value: "2"
+      value: "3"
+      value: "4"
+    }
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    distribution_constraints {
+      min_domain_mass: 0.97
+    }
+    skew_comparator {
+      infinity_norm {
+        threshold: 0.03
+      }
+    }
+    drift_comparator {
+      infinity_norm {
+        threshold: 0.1
+      }
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "MARRIAGE"
+    type: BYTES
+    string_domain {
+      name: "MARRIAGE"
+      value: "1"
+      value: "2"
+      value: "3"
+    }
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    distribution_constraints {
+      min_domain_mass: 0.97
+    }
+    skew_comparator {
+      infinity_norm {
+        threshold: 0.03
+      }
+    }
+    drift_comparator {
+      infinity_norm {
+        threshold: 0.1
+      }
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "AGE"
+    type: INT
+    int_domain {
+      name: "AGE"
+      min: 18
+      max: 100
+    }
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    drift_comparator {
+      jensen_shannon_divergence {
+        threshold: 0.1
+      }
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_0"
+    type: BYTES
+    domain: "PAY_STATUS"
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    skew_comparator {
+      infinity_norm {
+        threshold: 0.03
+      }
+    }
+    drift_comparator {
+      infinity_norm {
+        threshold: 0.1
+      }
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_2"
+    type: BYTES
+    domain: "PAY_STATUS"
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_3"
+    type: BYTES
+    domain: "PAY_STATUS"
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_4"
+    type: BYTES
+    domain: "PAY_STATUS"
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_5"
+    type: BYTES
+    domain: "PAY_STATUS"
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_6"
+    type: BYTES
+    domain: "PAY_STATUS"
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "BILL_AMT1"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "BILL_AMT2"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "BILL_AMT3"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "BILL_AMT4"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "BILL_AMT5"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "BILL_AMT6"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_AMT1"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_AMT2"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_AMT3"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_AMT4"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_AMT5"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "PAY_AMT6"
+    type: INT
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  feature {
+    name: "DEFAULT"
+    type: INT
+    bool_domain {
+    }
+    presence {
+      min_fraction: 1.0
+      min_count: 1
+    }
+    not_in_environment: "SERVING"
+    shape {
+      dim {
+        size: 1
+      }
+    }
+  }
+  string_domain {
+    name: "PAY_STATUS"
+    value: "-2"
+    value: "-1"
+    value: "0"
+    value: "1"
+    value: "2"
+    value: "3"
+    value: "4"
+    value: "5"
+    value: "6"
+    value: "7"
+    value: "8"
+  }
+  default_environment: "TRAINING"
+  default_environment: "SERVING"
+}
+anomaly_name_format: SERIALIZED_PATH
+drift_skew_info {
+  path {
+    step: "AGE"
+  }
+  drift_measurements {
+    type: JENSEN_SHANNON_DIVERGENCE
+    value: 0.007016725497946411
+    threshold: 0.1
+  }
+}
+drift_skew_info {
+  path {
+    step: "EDUCATION"
+  }
+  drift_measurements {
+    type: L_INFTY
+    value: 0.021476190476190482
+    threshold: 0.1
+  }
+}
+drift_skew_info {
+  path {
+    step: "LIMIT_BAL"
+  }
+  drift_measurements {
+    type: JENSEN_SHANNON_DIVERGENCE
+    value: 0.015379831924653989
+    threshold: 0.1
+  }
+}
+drift_skew_info {
+  path {
+    step: "MARRIAGE"
+  }
+  drift_measurements {
+    type: L_INFTY
+    value: 0.004809523809523819
+    threshold: 0.1
+  }
+}
+drift_skew_info {
+  path {
+    step: "PAY_0"
+  }
+  drift_measurements {
+    type: L_INFTY
+    value: 0.009571428571428564
+    threshold: 0.1
+  }
+}
+drift_skew_info {
+  path {
+    step: "SEX"
+  }
+  drift_measurements {
+    type: L_INFTY
+    value: 0.020190476190476203
+    threshold: 0.1
+  }
+}

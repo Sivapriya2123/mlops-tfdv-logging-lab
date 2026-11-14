@@ -1,0 +1,2 @@
+{"ts": "2026-11-14T21:53:32.550484+00:00", "batch": "batch_corrupt", "anomaly_count": 6, "threshold": 2, "features": ["SEX", "AGE", "EDUCATION", "BILL_AMT1", "PAY_AMT6", "PAY_0"]}
+{"ts": "2026-11-14T21:53:32.682275+00:00", "batch": "batch_drift", "anomaly_count": 2, "threshold": 2, "features": ["LIMIT_BAL", "EDUCATION"]}
